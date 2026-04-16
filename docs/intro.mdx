@@ -1,0 +1,25 @@
+---
+sidebar_position: 1
+title: "Introduction au Projet DevOps"
+description: "Documentation complète d'un pipeline CI/CD multi-plateforme"
+---
+
+# 🚀 Introduction : Pipeline CI/CD Multi-Plateforme
+
+## Contexte du Projet
+
+Ce projet démontre l'implémentation d'un pipeline **CI/CD professionnel** capable de déployer automatiquement une application statique sur **deux plateformes distinctes** :
+
+- **Vercel** : Déploiement principal avec CDN mondial
+- **GitHub Pages** : Solution de fallback et documentation publique
+
+## Architecture du Pipeline
+
+```mermaid
+graph LR
+    A[Git Push] --> B[GitHub Actions]
+    B --> C[Build Docusaurus]
+    C --> D[Vercel]
+    C --> E[GitHub Pages]
+    D --> F[Production CDN]
+    E --> G[Static Fallback]
